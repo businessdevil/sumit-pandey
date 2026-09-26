@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumit Pandey | Business Leader & Vedic Astrologer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bg-color: #0F1115;
+            --surface-color: #1A1D24;
+            --text-main: #F5F5F5;
+            --text-muted: #A0A5B1;
+            --accent-color: #D4AF37;
+            --accent-hover: #F5C542;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-serif);
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #000;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--text-muted);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #fff;
+            border: 2px solid #25D366;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: transparent;
+            color: #25D366;
+        }
+
+        /* --- HEADER / NAV --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(15, 17, 21, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            height: 75px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+        }
+
+        .nav-menu-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1;
+            margin-left: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            margin-left: 40px; /* Ensures proper gap between Contact and Book button */
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding-top: 80px;
+            padding-bottom: 40px;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text .highlight {
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            max-width: 95%;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: right;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 320px; /* Smaller image as requested */
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid var(--card-border);
+            display: inline-block;
+        }
+
+        /* --- SECTION TITLES --- */
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .about-highlight {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            font-family: var(--font-serif);
+            border-left: 3px solid var(--accent-color);
+            padding-left: 15px;
+            margin: 25px 0;
+        }
+
+        /* --- CARDS GRID (Expertise & Astrology) --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 30px 25px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card-number {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        /* --- JOURNEY / TIMELINE --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 30px auto 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--card-border);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item.left { left: 0; }
+        .timeline-item.right { left: 50%; }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            right: -7px;
+            background-color: var(--bg-color);
+            border: 3px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.right::after { left: -7px; }
+
+        .timeline-content {
+            padding: 15px 25px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+        }
+
+        .timeline-content h4 {
+            color: var(--accent-color);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* --- PHILOSOPHY --- */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .philosophy-item h4 {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .philosophy-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- BOOKING SECTION --- */
+        .booking-section {
+            background-color: var(--surface-color);
+            text-align: center;
+        }
+
+        .calendar-embed {
+            background-color: var(--bg-color);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 30px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 35px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-info-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-info-card p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-color);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- FLOATING WHATSAPP --- */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 900px) {
+            .nav-menu-wrapper {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-color);
+                display: none; /* Hidden by default */
+                flex-direction: column;
+                padding: 20px 0;
+                border-bottom: 1px solid var(--card-border);
+                margin-left: 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            }
+
+            .nav-menu-wrapper.active {
+                display: flex; /* Shown when hamburger is clicked */
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 15px;
+                align-items: center;
+                margin-bottom: 20px; /* Space between links and button */
+            }
+
+            .nav-cta {
+                width: 100%;
+                justify-content: center;
+                margin-left: 0;
+                padding: 0 20px;
+            }
+
+            .nav-cta .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .hero-grid, .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-text p { margin: 0 auto 25px; }
+            .hero-buttons { justify-content: center; }
+            .hero-image { order: -1; text-align: center; } 
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item.right { left: 0%; }
+            .timeline-item.left::after, .timeline-item.right::after { left: 23px; }
+            
+            .about-highlight { text-align: left; }
+        }
+
+        @media (max-width: 500px) {
+            .hero-text h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .hero-buttons { flex-direction: column; }
+            .hero-buttons .btn { width: 100%; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">SUMIT PANDEY</div>
+            
+            <!-- Wrapper for mobile menu -->
+            <div class="nav-menu-wrapper" id="navMenuWrapper">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#journey">Journey</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="nav-cta">
+                    <a href="#booking" class="btn btn-primary">Book a Consultation</a>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="section-subtitle">Welcome to my space</span>
+                <h1>Combining Business Strategy with <span class="highlight">Ancient Wisdom.</span></h1>
+                <p>I am a Business Leader, Marketing Professional, Vedic Astrologer, and Tarot Reader. I combine business experience, consumer understanding, and ancient wisdom to help people make informed decisions and create meaningful growth.</p>
+                <div class="hero-buttons">
+                    <a href="#booking" class="btn btn-primary">Book a Consultation</a>
+                    <!-- Replace the number below with your actual WhatsApp number -->
+                    <a href="https://wa.me/+9779857088143?text=Hi%20Sumit,%20I%20would%20like%20to%20connect." target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- IMPORTANT: Replace the src below with your actual clear photo file (e.g., sumit.jpg) -->
+                <img src="summ.png" alt="Sumit Pandey - Business Leader & Astrologer">
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="container" id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <span class="section-subtitle">My Journey</span>
+                <h2 class="section-title">From Engineering to Human Understanding.</h2>
+                <p>My professional journey has been shaped by two powerful areas of human understanding — business and people. With experience in sales leadership, recovery management, marketing, consumer behaviour, and team management, I have spent years understanding how businesses grow and how customers make decisions.</p>
+                <p>Alongside my corporate career, I have developed a deep interest and practice in Vedic Astrology, Tarot, Numerology, Reiki, and spiritual sciences.</p>
+                <div class="about-highlight">
+                    "Business teaches me how the world works. Astrology teaches me to look within."
+                </div>
+                <p>Today, I bring these experiences together through my work, learning, and consultations.</p>
+            </div>
+            <div class="hero-image">
+                <!-- Secondary image placeholder (optional) -->
+                <img src="summ.png" alt="Sumit Pandey Corporate">
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERTISE SECTION (Content remains, just no longer in the top menu) -->
+    <section class="container" id="expertise">
+        <span class="section-subtitle">Professional Expertise</span>
+        <h2 class="section-title">What I bring to the table.</h2>
+        <p class="section-desc">Experience developed through corporate leadership, marketing, customer interaction, and continuous learning.</p>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <span class="card-number">01</span>
+                <h3>Sales & Leadership</h3>
+                <p>Regional sales management, recovery operations, business development, team leadership, and commercial vehicle markets.</p>
+            </div>
+            <div class="card">
+                <span class="card-number">02</span>
+                <h3>Marketing</h3>
+                <p>MBA-trained marketing perspective with experience in brand communication, digital content, lead generation, and market development.</p>
+            </div>
+            <div class="card">
+                <span class="card-number">03</span>
+                <h3>Consumer Behaviour</h3>
+                <p>A continuing interest in consumer psychology, decision-making, social media influence, and the relationship between people and brands.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNEY SECTION -->
+    <section class="container" id="journey">
+        <span class="section-subtitle">My Journey</span>
+        <h2 class="section-title">From engineering to human understanding.</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h4>Engineering</h4>
+                    <p>B.E. Mechanical Engineering. Built a technical foundation and a problem-solving mindset.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h4>Management</h4>
+                    <p>MBA — Marketing & Sales Management. Developed a deeper understanding of markets, customers, strategy, and business.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <h4>Corporate</h4>
+                    <p>Sales & Recovery Leadership. Experience managing regional commercial-vehicle business, teams, customers, and operational priorities.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <h4>Spiritual Path</h4>
+                    <p>Vedic Astrology • Tarot • Numerology • Reiki. Continued study and practice of traditional spiritual disciplines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ASTROLOGY SECTION -->
+    <section class="container" id="astrology">
+        <span class="section-subtitle">Astrology & Spiritual Practice</span>
+        <h2 class="section-title">Explore the inner dimension.</h2>
+        <p class="section-desc">Traditional systems approached with a reflective and practical mindset.</p>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-sun"></i></div>
+                <h3>Vedic Astrology</h3>
+                <p>Traditional birth-chart interpretation, planetary influences, life themes, and traditional astrological interpretations.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-star"></i></div>
+                <h3>Tarot Reading</h3>
+                <p>Reflective readings for career, relationships, personal decisions, and life questions.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-om"></i></div>
+                <h3>Numerology & Reiki</h3>
+                <p>Exploring traditional numerological systems, energy-focused spiritual practices, and Rudraksha traditions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY SECTION -->
+    <section class="container">
+        <div style="text-align: center;">
+            <span class="section-subtitle">My Philosophy</span>
+            <h2 class="section-title" style="max-width: 800px; margin: 0 auto 30px;">Knowledge becomes meaningful when it helps us understand ourselves better.</h2>
+        </div>
+        <div class="philosophy-grid">
+            <div class="philosophy-item">
+                <h4>Business</h4>
+                <p>Teaches me how the world works.</p>
+            </div>
+            <div class="philosophy-item">
+                <h4>Astrology</h4>
+                <p>Teaches me to look within.</p>
+            </div>
+            <div class="philosophy-item">
+                <h4>Marketing</h4>
+                <p>Teaches me to understand people.</p>
+            </div>
+            <div class="philosophy-item">
+                <h4>Spirituality</h4>
+                <p>Teaches me to understand purpose.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING SECTION (Google Calendar Integration) -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <span class="section-subtitle">Appointments</span>
+            <h2 class="section-title">Book a Consultation.</h2>
+            <p class="section-desc" style="margin: 0 auto 30px;">Select a time that works for you. Whether it's a business consultation, astrology reading, or tarot session.</p>
+            
+            <div class="calendar-embed">
+                <!-- 
+                    INSTRUCTIONS FOR GOOGLE CALENDAR INTEGRATION:
+                    1. Sign up for Calendly or Cal.com.
+                    2. Connect your Google Calendar.
+                    3. Create an Event Type (e.g., "Astrology Consultation").
+                    4. Copy the embed code/link provided by Calendly.
+                    5. Replace the <div> below with the provided <iframe> code.
+                -->
+                <div style="text-align: center;">
+                    <i class="fas fa-calendar-check" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 20px;"></i>
+
+                  
+<div class="calendly-inline-widget" data-url="https://calendly.com/businessdevil94/astrology" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="container" id="contact">
+        <div class="contact-grid">
+            <div>
+                <span class="section-subtitle">Let's Connect</span>
+                <h2 class="section-title">Start a conversation.</h2>
+                <p class="section-desc">For professional collaborations, marketing discussions, speaking opportunities, or consultation enquiries, get in touch.</p>
+                
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="contact-info-card">
+                <h3>Sumit Pandey</h3>
+                <p>Business Leader • Marketing Professional • Vedic Astrologer • Tarot Reader</p>
+                
+                <div class="contact-buttons">
+                    <a href="mailto:contact@sumitpandey.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Email Me</a>
+                    <!-- Replace the number below with your actual WhatsApp number -->
+                    <a href="https://wa.me/+9779857088143?text=Hi%20Sumit,%20I%20would%20like%20to%20connect." target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container" style="padding: 20px 0;">
+            <p>&copy; 2026 Sumit Pandey. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <!-- Replace the number below with your actual WhatsApp number -->
+    <a href="https://wa.me/+9779857088143?text=Hi%20Sumit,%20I%20would%20like%20to%20connect." class="floating-wa" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT FOR MOBILE MENU -->
+    <script>
+        // Toggle the mobile menu wrapper (Open/Close)
+        function toggleMobileMenu() {
+            const navMenuWrapper = document.getElementById('navMenuWrapper');
+            navMenuWrapper.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

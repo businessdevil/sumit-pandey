@@ -385,6 +385,76 @@
             font-size: 0.85rem;
         }
 
+        /* --- EXPERIENCE SECTION --- */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .experience-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            border-color: var(--accent-color);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 15px;
+        }
+
+        .exp-header h3 {
+            font-size: 1.3rem;
+            margin: 0;
+            color: var(--text-main);
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            background-color: rgba(212, 175, 55, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .exp-role {
+            margin-bottom: 15px;
+        }
+
+        .exp-role:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-role h4 {
+            font-size: 1.05rem;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+            font-family: var(--font-sans);
+            font-weight: 500;
+        }
+
+        .exp-role p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
         /* --- PHILOSOPHY --- */
         .philosophy-grid {
             display: grid;
@@ -403,6 +473,130 @@
         .philosophy-item p {
             color: var(--text-muted);
             font-size: 0.9rem;
+        }
+
+        /* --- TESTIMONIALS CAROUSEL --- */
+        .testimonial-carousel {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .carousel-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .carousel-viewport {
+            overflow: hidden;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .testimonial-slide {
+            flex: 0 0 100%;
+            display: flex;
+            padding: 0 4px;
+        }
+
+        .testimonial-card {
+            flex: 1;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px 35px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 250px;
+            transition: border-color 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .testimonial-quote-icon {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+            opacity: 0.85;
+        }
+
+        .testimonial-text {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--text-main);
+            margin-bottom: 22px;
+        }
+
+        .testimonial-name {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-family: var(--font-sans);
+        }
+
+        .carousel-btn {
+            flex: 0 0 auto;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 1px solid var(--card-border);
+            background-color: var(--card-bg);
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #000;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 28px;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.22);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot:hover {
+            background-color: var(--text-muted);
+        }
+
+        .carousel-dot.active {
+            width: 24px;
+            border-radius: 4px;
+            background-color: var(--accent-color);
         }
 
         /* --- BOOKING SECTION --- */
@@ -576,6 +770,36 @@
             .timeline-item.left::after, .timeline-item.right::after { left: 23px; }
             
             .about-highlight { text-align: left; }
+            
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .exp-date {
+                margin-top: 5px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .carousel-row {
+                gap: 10px;
+            }
+
+            .carousel-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 0.8rem;
+            }
+
+            .testimonial-card {
+                padding: 30px 22px;
+                min-height: 280px;
+            }
+
+            .testimonial-text {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
         }
 
         @media (max-width: 500px) {
@@ -598,6 +822,7 @@
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li> 
                     <li><a href="#journey">Journey</a></li>
                     <li><a href="#booking">Booking</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -621,14 +846,12 @@
                 <p>I am a Business Leader, Marketing Professional, Vedic Astrologer, and Tarot Reader. I combine business experience, consumer understanding, and ancient wisdom to help people make informed decisions and create meaningful growth.</p>
                 <div class="hero-buttons">
                     <a href="#booking" class="btn btn-primary">Book a Consultation</a>
-                    <!-- Replace the number below with your actual WhatsApp number -->
                     <a href="https://wa.me/+9779857088143?text=Hi%20Sumit,%20I%20would%20like%20to%20connect." target="_blank" class="btn btn-whatsapp">
                         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                     </a>
                 </div>
             </div>
             <div class="hero-image">
-                <!-- IMPORTANT: Replace the src below with your actual clear photo file (e.g., sumit.jpg) -->
                 <img src="summ.png" alt="Sumit Pandey - Business Leader & Astrologer">
             </div>
         </div>
@@ -712,6 +935,160 @@
         </div>
     </section>
 
+    <!-- EXPERIENCE SECTION (NEW) -->
+    <section class="container" id="experience">
+        <span class="section-subtitle">Work History</span>
+        <h2 class="section-title">Professional Experience.</h2>
+        
+        <div class="experience-list">
+            <!-- IME Motors -->
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>IME Motors Ashok Leyland Nepal</h3>
+                    <span class="exp-date">Full-time · Present</span>
+                </div>
+                <div class="exp-role">
+                    <h4>Manager - Regional Sales and Recovery</h4>
+                    <p>Jan 2025 - Present · | Birganj, Nārāyanī, Nepal</p>
+                </div>
+                <div class="exp-role">
+                    <h4>Deputy Manager - Regional Sales and Recovery</h4>
+                    <p>Jun 2024 - Dec 2024 · 7 mos | Birganj, Nārāyanī, Nepal · On-site</p>
+                </div>
+                <div class="exp-role">
+                    <h4>Branch Manager - Operations</h4>
+                    <p>May 2023 - May 2024 · 1 yr 1 mo | Dang District, Lumbini, Nepal</p>
+                </div>
+            </div>
+            
+            <!-- Astrovagmi Wellness -->
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>Astrovagmi Wellness</h3>
+                    <span class="exp-date"> Present | India · Remote</span>
+                </div>
+                <div class="exp-role">
+                    <h4>Senior Marketing Manager (Freelance)</h4>
+                    <p>Apr 2026 - Present · </p>
+                </div>
+                <div class="exp-role">
+                    <h4>Senior Astrologer (Part-time)</h4>
+                    <p>Jan 2026 - Present · </p>
+                </div>
+            </div>
+
+            <!-- Astrologer -->
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>Astrologer</h3>
+                    <span class="exp-date">Part-time · Jun 2022 - Present · 
+                       Nepal · Hybrid</span>
+                </div>
+                <div class="exp-role">
+                    <h4>Certified Astrologer | Tarot Card Reader | Numerology Expert | Vedic Guidance Healer</h4>
+                    <p>As a certified astrologer, I help individuals find clarity and direction through the ancient sciences of astrology, tarot, numerology, and Vedic wisdom. With a deep intuitive sense and years of experience, I guide people on their life journeys—offering personalized insights using tarot cards, numerological analysis, and astrological charts. My practice also incorporates crystal healing and psychic intuition to promote spiritual growth, emotional healing, and mental peace. Whether it's navigating relationships, career decisions, or personal challenges, I offer holistic support rooted in energy alignment and divine guidance. My mission is to heal, guide, and empower others to lead fulfilling lives aligned with their true purpose.</p>
+                </div>
+            </div>
+
+            <!-- Jagdamba Construction -->
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>Jagdamba Construction Solutions Pvt. Ltd.</h3>
+                    <span class="exp-date">Full-time · 1 yr 2 mos</span>
+                </div>
+                <div class="exp-role">
+                    <h4>Branch Manager - Operations</h4>
+                    <p>Apr 2022 - May 2023 | Butwal, Lumbini, Nepal</p>
+                </div>
+            </div>
+
+            <!-- MAW Earthmovers -->
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>MAW Earthmovers Pvt. Ltd.</h3>
+                    <span class="exp-date">Full-time · 1 yr 2 mos</span>
+                </div>
+                <div class="exp-role">
+                    <h4>Material Handling and Power Product Officer - Nepal Sales at MAW JCB</h4>
+                    <p>Mar 2021 - Apr 2022 | Nepal</p>
+                </div>
+            </div>
+
+            <!-- DhaatuNepal -->
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>DhaatuNepal</h3>
+                    <span class="exp-date">Part-time · 6 mos</span>
+                </div>
+                <div class="exp-role">
+                    <h4>Social Media Marketing Manager</h4>
+                    <p>Nov 2020 - Apr 2021 | Kathmandu, Bāgmatī, Nepal</p>
+                </div>
+            </div>
+
+            <!-- Huaxin Cement -->
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>Huaxin Cement Co., Ltd.</h3>
+                    <span class="exp-date">Full-time · 1 yr 3 mos</span>
+                </div>
+                <div class="exp-role">
+                    <h4>Mechanical Engineer</h4>
+                    <p>Jan 2020 - Mar 2021 | Dhading, Nepal</p>
+                </div>
+            </div>
+
+            <!-- Kesharichand Bhanwarlall -->
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>Kesharichand Bhanwarlall</h3>
+                    <span class="exp-date">Full-time · 7 mos</span>
+                </div>
+                <div class="exp-role">
+                    <h4>Sales Engineer</h4>
+                    <p>Jun 2019 - Dec 2019 | Birganj, Nārāyanī, Nepal</p>
+                </div>
+            </div>
+
+            <!-- Math Tutor -->
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>Math tutor</h3>
+                    <span class="exp-date">2 yrs 6 mos | Bengaluru, Karnataka, India 
+                       <br> · On-site</span>
+                </div>
+                <div class="exp-role">
+                    <h4>Math tutor</h4>
+                    <p>Dec 2016 - May 2019</p>
+                </div>
+            </div>
+
+            <!-- Honda Cars -->
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>Honda Cars India Ltd</h3>
+                    <span class="exp-date">Full-time · 6 mos</span>
+                </div>
+                <div class="exp-role">
+                    <h4>Sales Consultant</h4>
+                    <p>Jun 2016 - Nov 2016 | Bengaluru, Karnataka, India</p>
+                </div>
+            </div>
+
+            <!-- Transact Global -->
+            <div class="experience-item">
+                <div class="exp-header">
+                    <h3>Transact Global</h3>
+                    <span class="exp-date">Full-time · 3 mos</span>
+                </div>
+                <div class="exp-role">
+                    <h4>Customer Service Representative</h4>
+                    <p>Mar 2016 - May 2016 | Bengaluru, Karnataka, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ASTROLOGY SECTION -->
     <section class="container" id="astrology">
         <span class="section-subtitle">Astrology & Spiritual Practice</span>
@@ -763,6 +1140,155 @@
         </div>
     </section>
 
+    <!-- TESTIMONIALS SECTION -->
+    <section class="container" id="testimonials">
+        <div style="text-align: center;">
+            <span class="section-subtitle">Kind Words</span>
+            <h2 class="section-title">What people say.</h2>
+            <p class="section-desc" style="margin: 0 auto 30px;">Reflections from clients and colleagues I've had the privilege to work with.</p>
+        </div>
+
+        <div class="testimonial-carousel">
+            <div class="carousel-row">
+                <button class="carousel-btn" onclick="moveTestimonial(-1)" aria-label="Previous testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="testimonialTrack">
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">A very nice person in and out. His guidance on astrology offers very simple and exact remedies that are easy to follow and truly fruitful. Thank you for your thoughtful words and support through my tough times.</p>
+                                <span class="testimonial-name">Puja Shrestha</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">It's always inspiring to connect with professionals who uphold integrity and depth in astrology. Looking forward to contributing together toward more conscious and aligned living for people.</p>
+                                <span class="testimonial-name">Neethu Lithan</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">I truly respect him as a senior and a knowledgeable astrologer. His advice was practical and clear, and by following it I was able to achieve important goals in my life. Highly recommended.</p>
+                                <span class="testimonial-name">Ganganath Kawar Yogi</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Their guidance gave me much-needed clarity during a confusing phase of my life. The predictions were explained in a practical and calm manner, and the remedies were simple and easy to follow.</p>
+                                <span class="testimonial-name">Ayushi Chourasiya</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">A guiding light on my journey into astrology. What truly stands out is his compassionate approach — how he uses astrology not just as a science, but as a tool for healing and consolation.</p>
+                                <span class="testimonial-name">Suraj Shrestha</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">One of the most energetic and hardworking professionals I've encountered. He takes ownership of every task and delivers high-quality results, often exceeding expectations.</p>
+                                <span class="testimonial-name">Govinda Dawadi</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">A very professional and promising colleague. His proactive, humble and hardworking approach as a professional always impressed and inspired me.</p>
+                                <span class="testimonial-name">Sudarsan Pathak</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">I have known Sumit for the past 4 years. He is passionate about his work, a go-getter and focused on goals. I see so much potential in him and wish him future success.</p>
+                                <span class="testimonial-name">Shyam Bhat</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Smart working guy with great communication skills and great leadership skills. He will turn out to be a great asset for any company.</p>
+                                <span class="testimonial-name">Saroj Patel</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">I couldn't have asked for a better colleague. I was constantly amazed not only by his technical management skills, but also by his ability to keep the team motivated.</p>
+                                <span class="testimonial-name">Bhagwati Kumar Bhagat</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">One of the most diligent people with lots of knowledge and ideas I have had the pleasure of working with.</p>
+                                <span class="testimonial-name">Chetan Budhathoki</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Always hardworking and passionate, tireless in his role. His enthusiasm for learning new things and acquiring product knowledge is always appreciable.</p>
+                                <span class="testimonial-name">Aashish Ghimire</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">A rare combination of technical knowledge and managerial skill — ambitious, but kind-hearted and friendly. An excellent colleague and a real-life friend.</p>
+                                <span class="testimonial-name">Ranjit Mahato</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">A very smart man with good communication skills and, overall, a good person.</p>
+                                <span class="testimonial-name">Mazin Ali</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Very motivational to all the young people who want to achieve something in life. A very good team leader who can take his own decisions and help people in need.</p>
+                                <span class="testimonial-name">Shilpa G</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="carousel-btn" onclick="moveTestimonial(1)" aria-label="Next testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
     <!-- BOOKING SECTION (Google Calendar Integration) -->
     <section class="booking-section" id="booking">
         <div class="container">
@@ -771,14 +1297,6 @@
             <p class="section-desc" style="margin: 0 auto 30px;">Select a time that works for you. Whether it's a business consultation, astrology reading, or tarot session.</p>
             
             <div class="calendar-embed">
-                <!-- 
-                    INSTRUCTIONS FOR GOOGLE CALENDAR INTEGRATION:
-                    1. Sign up for Calendly or Cal.com.
-                    2. Connect your Google Calendar.
-                    3. Create an Event Type (e.g., "Astrology Consultation").
-                    4. Copy the embed code/link provided by Calendly.
-                    5. Replace the <div> below with the provided <iframe> code.
-                -->
                 <div style="text-align: center;">
                     <i class="fas fa-calendar-check" style="font-size: 3rem; color: var(--accent-color); margin-bottom: 20px;"></i>
 
@@ -821,8 +1339,7 @@
                 <p>Business Leader • Marketing Professional • Vedic Astrologer • Tarot Reader</p>
                 
                 <div class="contact-buttons">
-                    <a href="mailto:contact@sumitpandey.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Email Me</a>
-                    <!-- Replace the number below with your actual WhatsApp number -->
+                    <a href="mailto:sumitpandeyco@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Email Me</a>
                     <a href="https://wa.me/+9779857088143?text=Hi%20Sumit,%20I%20would%20like%20to%20connect." target="_blank" class="btn btn-whatsapp">
                         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                     </a>
@@ -839,7 +1356,7 @@
     </footer>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <!-- Replace the number below with your actual WhatsApp number -->
+    
     <a href="https://wa.me/+9779857088143?text=Hi%20Sumit,%20I%20would%20like%20to%20connect." class="floating-wa" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -851,6 +1368,78 @@
             const navMenuWrapper = document.getElementById('navMenuWrapper');
             navMenuWrapper.classList.toggle('active');
         }
+    </script>
+
+    <!-- JAVASCRIPT FOR TESTIMONIAL CAROUSEL -->
+    <script>
+        var testimonialIndex = 0;
+        var testimonialTimer = null;
+
+        var testimonialTrack = document.getElementById('testimonialTrack');
+        var testimonialSlides = testimonialTrack.querySelectorAll('.testimonial-slide');
+        var testimonialDotsWrap = document.getElementById('carouselDots');
+        var testimonialCarousel = document.querySelector('.testimonial-carousel');
+
+        // Build dots
+        testimonialSlides.forEach(function (_, i) {
+            var dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+            dot.addEventListener('click', function () {
+                goToTestimonial(i);
+            });
+            testimonialDotsWrap.appendChild(dot);
+        });
+
+        var testimonialDots = testimonialDotsWrap.querySelectorAll('.carousel-dot');
+
+        function renderTestimonial() {
+            testimonialTrack.style.transform = 'translateX(-' + (testimonialIndex * 100) + '%)';
+            testimonialDots.forEach(function (dot, i) {
+                if (i === testimonialIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function goToTestimonial(i) {
+            testimonialIndex = (i + testimonialSlides.length) % testimonialSlides.length;
+            renderTestimonial();
+            restartTestimonialTimer();
+        }
+
+        function moveTestimonial(dir) {
+            goToTestimonial(testimonialIndex + dir);
+        }
+
+        function restartTestimonialTimer() {
+            if (testimonialTimer) {
+                clearInterval(testimonialTimer);
+            }
+            testimonialTimer = setInterval(function () {
+                testimonialIndex = (testimonialIndex + 1) % testimonialSlides.length;
+                renderTestimonial();
+            }, 7000);
+        }
+
+        // Pause on hover for a calmer reading experience
+        if (testimonialCarousel) {
+            testimonialCarousel.addEventListener('mouseenter', function () {
+                if (testimonialTimer) {
+                    clearInterval(testimonialTimer);
+                    testimonialTimer = null;
+                }
+            });
+            testimonialCarousel.addEventListener('mouseleave', function () {
+                restartTestimonialTimer();
+            });
+        }
+
+        // Initialise
+        renderTestimonial();
+        restartTestimonialTimer();
     </script>
 </body>
 </html>
